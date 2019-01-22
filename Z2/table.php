@@ -1,8 +1,8 @@
-<?php
-?>
-<html>
-<body>
 
+
+<!doctype html>
+<html lang="en" xml:lang="en">
+<body>
 
 Svi uneseni brojevi: <?php
 $brojevi[]="";
@@ -11,18 +11,9 @@ echo $brojevi;
 
 $broj = explode(",", $brojevi);
 
-//echo "broj0";
-//echo $broj[0];
-//
-//echo "broj1";
-//echo $broj[1];
-//echo "broj2";
-//echo $broj[2];
-//echo "velicina arraya";
-$velicina=count($broj);
-//echo (count($broj));
+
 ?>
-<br>
+
 
 
 
@@ -38,30 +29,44 @@ $velicina=count($broj);
 
     <?php
 
-    $count=1;
+    $count=0;
+$j=false;
 
     for($y=1;$y<17;$y++)
     {
+       //echo "<html><br></html>";
+
         echo "<html><tr></tr></html>";
     for($x=1;$x<17;$x++)
     {
+        $count++;
 
-        for($q=0;$q<$velicina;$q++)
+        foreach($broj as $value) {
+
+
+            if (($value == $count) && ($j == false)) {
+                echo "<html><td>$count</td></html>";
+                $j = true;
+            }
+        }
+
+            foreach($broj as $value)
+            {
+
+          if(($j==false)&&($value!=$count))
         {
-           if(count===1)
-           {
-               echo "<html><td>$count</td></html>";
-           }
+            echo "<html><td></td></html>";
+            $j=true;
+        }
 
-           elseif (count!==broj[q])
-           {
-               echo "<html><td>$velicina</td></html>";
-               break;
-           }
+
+
 
         }
-    //    echo "<html><td>$count</td></html>";
-        $count++;
+        $j=false;
+
+
+
     }
     }
 ?>
@@ -80,7 +85,6 @@ $velicina=count($broj);
 
 
 </html>
-
 
 
 
